@@ -26,3 +26,32 @@ function buildTable(data){
         );
     });
 }
+
+function handleClick(){
+    //Grab the datetime value from the filter
+    let date=d3.select("#datetime").property("value");
+    //select. is often used in D3. It will select the very first element that matches our selector string "#datetime"
+    //We are telling D3 to look for the #datetime id in the HTML tags
+    //with .property("value") we are telling D3 to grab the information and hold it in the "date" variable
+    let filteredData=tableData;
+    
+    //Check to see if a daate was entererd and filter the data using that date
+    if(date){
+        filteredData=filteredData.filter(row=>row.datetime===date);
+    }
+    //The .filter() method: row => row.datetime === date)
+    //This line is what applies the filter to the table data. 
+    //It's basically saying, "Show only the rows where the date is equal to the date filter we created above." 
+    //The triple equal signs test for equality, meaning that the date in the table has to match our filter exactly.
+
+    //Rebuild the table using the filtered data
+    //@NoTE:if no date was entered, then filteredData will just be the original tableData
+    buildTable(filteredData)
+}    
+    //Attach an event to listen for the form button
+    d3.selectAll("#filter-btn").on("click",handleClick);
+    //Our selector string contains the id for another HTML tag. 
+    //.on("click", handleClick);, we're telling D3 to execute our handleClick() function when the button with an id of filter-btn is clicked.
+
+    //Build the table when the page loads
+    buildTable(tableData);
