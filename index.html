@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UFO Finder</title>
+        
+    <!-- Add link to bootstraps content delivery network -->
+    <link
+    rel="stylesheet"
+    href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous"
+  />
+
+    <!-- Add a link to our stylesheet -->
+    <link rel="stylesheet" href="static/css/style.css">
+
+
+</head>
+<body>
+    <!-- The wrapper class helps to group elements, title, paragraph, table and filters -->
+    <div class="wrapper">
+        <!-- "navbar" indicates that we want a component that fits across the top of the page -->
+        <!-- "navbar-expand-lg" provides extra responsivness to the default navbar behavior-->
+        <nav class="navbar navbar-expand-lg">
+            <!-- "navbar-brand" gives some stiling to the navbar while "href" links to the specified file -->
+            <a class="navbar-brand" href="index.html">UFO Sightnings</a>
+        </nav>
+        <!-- Add a jumbotron style header -->
+        <div class="jumbotron">
+            <h1>The Truth is Out There</h1>
+        </div>
+        <!-- Add a container with the class "container-fluid" containing the introduction-->
+        <div class="container-fluid">
+            <div class="row">
+                <!-- We add 4 columns to the article and the remaining to the paragraph -->
+                <div class="col-md-4">
+                    <!-- We add the title -->
+                    <h3>UFO Sightings: Fact or Fancy? <small>Ufologists Weigh In</small></h3>
+                </div>
+                <div class="col-md-8">
+                    <!-- Next we add a paragraph  -->
+                    <p>
+                        Are we alone in the universe? For millennia, humans have turned to the sky to answer this question. Now, thanks to research generously funded by W. Avy, a UFO-enthusiast and amateur ufologist, we can supplement our sky-searching with data analysis.<br><br>"The release of this analysis is well-timed: It coincides with the celebration of World UFO Day, which is a moment for ufologists around the world to connect, relax, and sample a range of UFO-themed snacks," said Dr. Ursula F. Olivier, the world's preeminent expert on circular sightings. "Citizen-scientists can be especially helpful in both cataloguing sightings—which is hugely helpful for us in our search for aliens—and in helping us celebrate the work that has already been done, such as this data visualization project, which will help us raise awareness of the ubiquity of sightings!"<br><br>Not everyone is ready to celebrate, however. Local CEO and vocal anti-alien activist V. Isualize reached out to our reporters to go on record as firmly opposed to any attempts to provide access to this data. "If there are aliens, they certainly would like to be left alone," she stated, before directing us to the Leave Aliens Alone (LAA) community engagement initiative she founded and funds.<br><br>So what do YOU think? Are we alone in the universe? Are aliens trying to contact us, or do they want to be left alone? Dig through the data yourself, and let us know what you see.        
+                    </p>
+                </div>
+
+            </div>
+        </div>
+        <!-- Add a container that will hold the table filter  -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3">
+                    <!-- Lets add a HTML form alongside a text -->
+                    <form>
+                        <p>Filter Search</p>
+                    </form>
+
+                    <li class="list-group-item">
+                        <!-- This represents the promp to encourage users to input a date, the label representes a caption for the date item -->
+                        <!-- The text Enter Date serces as the actual label -->
+                        <label for="date">Enter Date</label>
+                        <!-- The type="Text" means that the code will look for the text to be input -->
+                        <!-- The plaveholder is an example of a date to search, so users know both the location and the format to use when inputting a date -->
+                        <!-- The id="datetime" is what our JavaScript code will look for whrn the button is clicked and the function is executed-->
+                        <input type="text" placeholder="1/10/2010" id="datetume"/>
+                    </li>
+                    
+                    <li class="list-group-item">
+                        <!-- When this is clicked, th input from earlier is picked up by our JS code and then applied to the filter -->
+                        <!-- type="button" tells the browser by defualt to do nothing but pur custom JS script will overwirte the default behavior-->
+                        <!-- class="btn ntn-default" adds styling to our button -->
+                        <!-- Lastly we named our button Filter Table -->
+                        <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                        
+                    </li>        
+
+
+
+
+                </div> 
+                <div class="col-md-9">
+                    <!-- We create a table using each of the tags to hold the information -->
+
+                    <!-- table is the container of the table itself, all table componenets are nested within it -->
+                    <!-- class="table table-striped" gives some styling to the table -->
+                    <table class="table table-striped">
+                         <!--thead is an element that will display each column header  -->
+                        <thead>
+                            <!-- tr is a tag that signifiers a table row, when other tags are nested within it, they are displayed as a row information -->
+                            <tr>
+                           <!--th is the header of each column, also reffered as the columns name  -->
+                            <th>Date</th>
+                            <th>City</th>
+                            <th>State</th>
+                            <th>Country</th>
+                            <th>Shape</th>
+                            <th>Duration</th>
+                            <th>Comments</th>
+                            
+                          </tr>
+                        </thead>
+                        <!-- The container of the body of the table,where the data will be diplayed -->
+                        <tbody></tbody>
+                      </table>
+
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>
